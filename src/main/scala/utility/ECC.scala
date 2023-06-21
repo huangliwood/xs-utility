@@ -16,7 +16,7 @@
 
 // See LICENSE.Berkeley for license details.
 
-package utility
+package utility_hl
 
 import chisel3._
 import chisel3.util._

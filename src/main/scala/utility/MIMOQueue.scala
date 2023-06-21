@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.
 ***************************************************************************************/
 
-package utility
+package utility_hl
 
 import chisel3._
 import chisel3.experimental.{DataMirror, requireIsChiselType}

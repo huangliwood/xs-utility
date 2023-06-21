@@ -30,7 +30,7 @@
 * See the Mulan PSL v2 for more details.
 ***************************************************************************************/
 
-package utility
+package utility_hl
 
 import chisel3._
 import chisel3.util._
@@ -93,7 +93,7 @@ class SRAMWriteBus[T <: Data](private val gen: T, val set: Int, val way: Int = 1
 class SRAMTemplate[T <: Data](
   gen: T, set: Int, way: Int = 1, singlePort: Boolean = false,
   shouldReset: Boolean = false, extraReset: Boolean = false,
-  holdRead: Boolean = false, bypassWrite: Boolean = false
+  holdRead: Boolean = false, bypassWrite: Boolean = false,name:String=""
 ) extends Module {
   val io = IO(new Bundle {
     val r = Flipped(new SRAMReadBus(gen, set, way))
@@ -156,7 +156,8 @@ class SRAMTemplate[T <: Data](
   io.r.resp.data := VecInit(rdata)
   io.r.req.ready := !resetState && (if (singlePort) !wen else true.B)
   io.w.req.ready := true.B
-
+  if(name != null)
+    this.suggestName(name)
 }
 
 class FoldedSRAMTemplate[T <: Data](gen: T, set: Int, width: Int = 4, way: Int = 1,

@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.
 ***************************************************************************************/
 
-package utility
+package utility_hl
 
 import chipsalliance.rocketchip.config.Parameters
 import chisel3._

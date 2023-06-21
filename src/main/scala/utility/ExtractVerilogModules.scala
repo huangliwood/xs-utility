@@ -14,7 +14,7 @@
 * See the Mulan PSL v2 for more details.
 ***************************************************************************************/
 
-package utility
+package utility_hl
 
 /*
     https://github.com/Lingrui98/scalaTage/blob/vme/src/main/scala/getVerilogModules.scala
